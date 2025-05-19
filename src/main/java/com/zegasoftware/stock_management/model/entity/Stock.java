@@ -42,6 +42,9 @@ public class Stock {
     @Column(name = "stock_creation_date")
     private LocalDateTime stockCreation;
 
+    @Column(nullable = false)
+    private String sector;
+
     @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted = false;
 }

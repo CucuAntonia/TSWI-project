@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-sector-columns-2025-05-15
+      author: Cucu Antonia
+
+      changes:
+
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: sector
+                  type: varchar(255)
+                  defaultValue: 'UNASSIGNED'
+                  constraints:
+                    nullable: false
+
+        - addColumn:
+            tableName: stocks
+            columns:
+              - column:
+                  name: sector
+                  type: varchar(255)
+                  defaultValue: 'UNASSIGNED'
+                  constraints:
+                    nullable: false
+
+      rollback:
+        - dropColumn:
+            tableName: users
+            columnName: sector
+        - dropColumn:
+            tableName: stocks
+            columnName: sector

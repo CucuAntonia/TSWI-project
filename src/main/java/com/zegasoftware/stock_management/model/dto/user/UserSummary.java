@@ -13,4 +13,7 @@ public class UserSummary {
     private String username;
 
     private UserRoles role;
+
+//    private String sector;
+
 }

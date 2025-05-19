@@ -89,7 +89,7 @@ public class StockController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Stock with ID " + id + " not found or already deleted.");
         }
     }
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/admin/stocks/owner-count/{count}")
     public ResponseEntity<String> deleteStocksByOwnerCount(@PathVariable int count) {
         boolean deleted = stockService.deleteByOwnerCount(count);

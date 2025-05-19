@@ -25,6 +25,7 @@ public class StockDetails {
 
     private BigDecimal marketCap;
 
-//    private LocalDateTime stockCreation;
+//    private String sector;
+
 
 }

@@ -1,0 +1,9 @@
+policies:
+
+  - id: stock-read-by-sector
+    resource: Stock
+    action: read
+    description: "Users read only stocks in their own sector; ADMINs read all"
+    condition: >
+      subject.role == 'ADMIN' ||
+      subject.sector == resource.sector

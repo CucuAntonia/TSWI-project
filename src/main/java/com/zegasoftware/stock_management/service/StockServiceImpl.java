@@ -96,6 +96,7 @@ public class StockServiceImpl implements StockService {
                     stock.setStockOwnerCount(stockDetails.getStockOwnerCount());
                     stock.setStockType(stockDetails.getStockType());
                     stock.setMarketCap(stockDetails.getMarketCap());
+//                    stock.setSector(stockDetails.getSector());
                     stockRepo.save(stock);
                 });
     }
@@ -116,6 +117,7 @@ public class StockServiceImpl implements StockService {
                         stock.getStockOwnerCount(),
                         stock.getStockType(),
                         stock.getMarketCap()))
+//                        stock.getSector()))
                 .toList();
     }
 
@@ -132,6 +134,7 @@ public class StockServiceImpl implements StockService {
                         stock.getStockOwnerCount(),
                         stock.getStockType(),
                         stock.getMarketCap()))
+//                        stock.getSector()))
                 .toList();
     }
 

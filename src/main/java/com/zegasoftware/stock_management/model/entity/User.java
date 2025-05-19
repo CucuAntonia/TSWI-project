@@ -31,6 +31,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRoles role;
 
+    @Column(nullable = false)
+    private String sector;
+
     @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted = false;
 }
