@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: remove-sector-column-users-2025-05-20
+      author: Cucu Antonia
+
+      changes:
+        - dropColumn:
+            tableName: users
+            columnName: sector
+
+      rollback:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: sector
+                  type: varchar(255)
+                  defaultValue: 'UNASSIGNED'
+                  constraints:
+                    nullable: false

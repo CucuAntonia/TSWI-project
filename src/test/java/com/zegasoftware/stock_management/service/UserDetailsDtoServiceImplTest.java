@@ -1,6 +1,6 @@
 package com.zegasoftware.stock_management.service;
 
-import com.zegasoftware.stock_management.model.dto.user.UserDetails;
+import com.zegasoftware.stock_management.model.dto.user.UserDetailsDto;
 import com.zegasoftware.stock_management.model.enums.UserRoles;
 import com.zegasoftware.stock_management.repository.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class UserDetailsServiceImplTest {
+class UserDetailsDtoServiceImplTest {
 
     @InjectMocks
     private UserDetailsServiceImpl userDetailsService;
@@ -24,10 +24,10 @@ class UserDetailsServiceImplTest {
     @Mock
     private UserRepository userRepo;
 
-    private static final UserDetails USER_DETAILS;
+    private static final UserDetailsDto USER_DETAILS;
 
     static {
-        USER_DETAILS = new UserDetails("testuser", "encodedpassword", UserRoles.USER);
+        USER_DETAILS = new UserDetailsDto("testuser", "encodedpassword", UserRoles.USER);
     }
 
     @Test
@@ -55,7 +55,7 @@ class UserDetailsServiceImplTest {
 
     @Test
     void givenValidUsernameWithNullRole_whenCallingLoadUserByUsername_thenReturnUserDetailsWithDefaultRole() {
-        UserDetails userWithNullRole = new UserDetails("testuser", "encodedpassword", null);
+        UserDetailsDto userWithNullRole = new UserDetailsDto("testuser", "encodedpassword", null);
         when(userRepo.findByUsername("testuser")).thenReturn(Optional.of(userWithNullRole));
 
         org.springframework.security.core.userdetails.UserDetails userDetails =

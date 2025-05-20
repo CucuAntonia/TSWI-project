@@ -1,6 +1,6 @@
 package com.zegasoftware.stock_management.repository;
 
-import com.zegasoftware.stock_management.model.dto.user.UserDetails;
+import com.zegasoftware.stock_management.model.dto.user.UserDetailsDto;
 import com.zegasoftware.stock_management.model.dto.user.UserSummary;
 import com.zegasoftware.stock_management.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -27,8 +27,15 @@ public interface UserRepository extends JpaRepository<User, UUID> {
             "where u.id = :id and u.isDeleted = false")
     Optional<UserSummary> findUserById(@Param("id") UUID id);
 
-
-    @Query("select new com.zegasoftware.stock_management.model.dto.user.UserDetails(u.username, u.password, u.role ) from User u " +
+    @Query("select new com.zegasoftware.stock_management.model.dto.user.UserDetailsDto(u.username, u.password, u.role ) from User u " +
             "where u.username = :username and u.isDeleted = false")
-    Optional<UserDetails> findByUsername(@Param("username") String username);
+    Optional<UserDetailsDto> findByUsername(@Param("username") String username);
+
+    @Query("""
+    select u
+      from User u
+     where u.username   = :username
+       and u.isDeleted = false
+  """)
+    Optional<User> entityFindByUsername (@Param("username") String username);
 }

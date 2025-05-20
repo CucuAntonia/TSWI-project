@@ -1,10 +1,7 @@
 package com.zegasoftware.stock_management.controller;
 
-import com.zegasoftware.stock_management.model.dto.user.UserDetails;
 import com.zegasoftware.stock_management.model.dto.user.UserSummary;
 import com.zegasoftware.stock_management.service.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

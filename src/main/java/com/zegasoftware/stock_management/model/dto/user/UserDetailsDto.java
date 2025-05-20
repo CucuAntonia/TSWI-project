@@ -8,12 +8,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class UserSummary {
+public class UserDetailsDto {
 
     private String username;
 
+    private String password;
+
     private UserRoles role;
 
-    //private String sector;
-
+   // private String sector;
 }

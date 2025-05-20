@@ -1,6 +1,6 @@
 package com.zegasoftware.stock_management.service;
 
-import com.zegasoftware.stock_management.mapper.UserMapper;
+import com.zegasoftware.stock_management.model.dto.user.UserDetailsDto;
 import com.zegasoftware.stock_management.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -23,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<com.zegasoftware.stock_management.model.dto.user.UserDetails> userDetails = userRepo.findByUsername(username);
+        Optional<UserDetailsDto> userDetails = userRepo.findByUsername(username);
 
         if (userDetails.isPresent()) {
             var user = userDetails.get();

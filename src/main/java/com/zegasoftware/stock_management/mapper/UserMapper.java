@@ -1,6 +1,6 @@
 package com.zegasoftware.stock_management.mapper;
 
-import com.zegasoftware.stock_management.model.dto.user.UserDetails;
+import com.zegasoftware.stock_management.model.dto.user.UserDetailsDto;
 import com.zegasoftware.stock_management.model.dto.user.UserSummary;
 import com.zegasoftware.stock_management.model.entity.User;
 import org.mapstruct.Mapper;
@@ -9,5 +9,7 @@ import org.mapstruct.Mapper;
 public interface UserMapper {
 
     User toEntity(UserSummary userSummary);
-    User toEntity(UserDetails userDetails);
+
+
+    User toEntity(UserDetailsDto userDetailsDto);
 }

@@ -1,6 +1,6 @@
 package com.zegasoftware.stock_management.service;
 
-import com.zegasoftware.stock_management.model.dto.user.UserDetails;
+import com.zegasoftware.stock_management.model.dto.user.UserDetailsDto;
 import com.zegasoftware.stock_management.model.dto.user.UserSummary;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public interface UserService {
 
     Optional<UserSummary> findUserByUsername(String username);
 
-    boolean saveUser(UserDetails user);
+    boolean saveUser(UserDetailsDto user);
 
     boolean deleteUser(UUID id);
 }

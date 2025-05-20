@@ -1,7 +1,7 @@
 package com.zegasoftware.stock_management.service;
 
 import com.zegasoftware.stock_management.mapper.UserMapper;
-import com.zegasoftware.stock_management.model.dto.user.UserDetails;
+import com.zegasoftware.stock_management.model.dto.user.UserDetailsDto;
 import com.zegasoftware.stock_management.model.dto.user.UserSummary;
 import com.zegasoftware.stock_management.model.entity.User;
 import com.zegasoftware.stock_management.model.enums.UserRoles;
@@ -35,7 +35,7 @@ class UserServiceImplTest {
 
     private static final UUID USER_ID = UUID.randomUUID();
     private static final User USER_ENTITY;
-    private static final UserDetails USER_DETAILS;
+    private static final UserDetailsDto USER_DETAILS;
     private static final UserSummary USER_SUMMARY;
 
     static {
@@ -46,7 +46,7 @@ class UserServiceImplTest {
         USER_ENTITY.setRole(UserRoles.USER);
         USER_ENTITY.setDeleted(false);
 
-        USER_DETAILS = new UserDetails("testuser", "testpassword", UserRoles.USER);
+        USER_DETAILS = new UserDetailsDto("testuser", "testpassword", UserRoles.USER);
 
         USER_SUMMARY = new UserSummary("testuser", UserRoles.USER);
     }

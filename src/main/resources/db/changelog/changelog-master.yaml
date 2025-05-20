@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: db/changelog/2025-05-15-add-sector-columns.yaml
+  - include:
+      file: db/changelog/2025-05-20-drop-sector-column-from-users.yaml

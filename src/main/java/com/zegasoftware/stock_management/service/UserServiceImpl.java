@@ -1,17 +1,13 @@
 package com.zegasoftware.stock_management.service;
 
 import com.zegasoftware.stock_management.mapper.UserMapper;
-import com.zegasoftware.stock_management.model.dto.user.UserDetails;
+import com.zegasoftware.stock_management.model.dto.user.UserDetailsDto;
 import com.zegasoftware.stock_management.model.dto.user.UserSummary;
-import com.zegasoftware.stock_management.model.entity.User;
 import com.zegasoftware.stock_management.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -46,7 +42,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean saveUser(UserDetails user) {
+    public boolean saveUser(UserDetailsDto user) {
         if (user == null) {
             return false;
         }
